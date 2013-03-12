@@ -21,11 +21,13 @@ namespace Sample
 
             Section sec = new Section();
 
-            Root = new RootElement("Test")
+            var root = new RootElement("Test")
             {
                 sec
             };
-            Root.UnevenRows = true;
+            root.UnevenRows = true;
+
+            Root = root;
 
             sec.Add(new MessageElement() { Subject = "A", Body = "B", Caption = "C", Sender = "D", Date = DateTime.Now, MessageCount = 5 });
             sec.Add(new MessageElement() { Subject = "E", Body = "F", Caption = "G", Sender = "H", Date = DateTime.Now, MessageCount = 5 });
